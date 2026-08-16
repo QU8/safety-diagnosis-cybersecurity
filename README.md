@@ -61,7 +61,7 @@ safety-diagnosis-cybersecurity/
 
 1. 将本仓库克隆或下载到本地：
    ```bash
-   git clone <你的仓库地址> safety-diagnosis-cybersecurity
+   git clone https://github.com/QU8/safety-diagnosis-cybersecurity.git
    ```
 2. 将整个 `safety-diagnosis-cybersecurity/` 目录复制到 WorkBuddy 的技能目录：
    - Windows：`C:\Users\<你的用户名>\.workbuddy\skills\`
