@@ -81,8 +81,8 @@ def parse_report(md_text):
         "issues": [],
     }
 
-    # 提取合计得分
-    m = re.search(r"合计得分[：:]\s*(\d+)\s*/\s*(\d+)\s*分", md_text)
+    # 提取合计得分（兼容 Markdown 粗体 **合计得分：** 写法）
+    m = re.search(r"合计得分[：:]\s*\*{0,2}\s*(\d+)\s*/\s*(\d+)\s*分", md_text)
     if m:
         results["total_score"] = int(m.group(1))
         results["full_score"] = int(m.group(2))
@@ -262,10 +262,15 @@ def verify_module_scores(report_data, module_map):
         if kb_full != kb_leaf_sum:
             checks.append(f"知识库声明{kb_full}≠叶子加总{kb_leaf_sum}")
 
+        # 实得分与扣分一致性校验：实得分 应 = 满分 - 扣分
+        expected_actual = mod["full"] - mod["deduction"]
+        if mod["actual"] != expected_actual:
+            checks.append(f"实得分{mod['actual']}≠满分{mod['full']}-扣分{mod['deduction']}={expected_actual}")
+
         if checks:
             results.append(("✗", mid, "；".join(checks)))
         else:
-            results.append(("✓", mid, f"满分{kb_full}分一致"))
+            results.append(("✓", mid, f"满分{kb_full}分一致，实得分{mod['actual']}=满分-扣分"))
 
     # 总分校验
     if report_data["total_score"] is not None:
