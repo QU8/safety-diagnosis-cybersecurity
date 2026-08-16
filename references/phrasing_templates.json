@@ -1,0 +1,32 @@
+{
+  "deduction_phrases": {
+    "default": "根据细则条款要求，{clause_name}应{requirement}。实际情况{actual_issue}，扣除{score}分。",
+    "missing_document": "未建立或未完善{document_type}，不符合{reference}要求，扣除{score}分。",
+    "configuration_issue": "{component}配置不当，未满足{security_requirement}，扣除{score}分。",
+    "missing_record": "缺少{record_type}记录或记录不完整，扣除{score}分。",
+    "training_issue": "未按规定开展{training_type}培训或培训记录不全，扣除{score}分。",
+    "equipment_issue": "{equipment_name}未按规定配置或运行状态异常，扣除{score}分。",
+    "policy_issue": "{policy_name}制度缺失或内容不完善，扣除{score}分。",
+    "flexible_deduction": "该条款要求每项扣{item_score}分，最高扣{max_score}分；现场发现{item_count}项，累计扣{total_score}分，{limit_explanation}，实际扣{score}分。"
+  },
+  
+  "conclusion_templates": {
+    "guidance": "根据本次评价结果，从以下维度综合分析并撰写总体评价：\n1. 整体表现：总体得分率、各模块得分情况分析\n2. 主要优势：表现突出的安全管理措施和亮点\n3. 关键问题：存在的高风险项和严重短板\n4. 改进建议：针对性的整改建议和提升方向\n\n评价应当客观、专业，既有对现状的准确评估，也应有对未来改进的指导意义。避免使用模板化表述，根据实际情况灵活调整评价内容和侧重点。"
+  },
+  
+  "rectification_templates": {
+    "high": "[立即整改] {specific_action}，确保问题得到彻底解决，并建立长效机制防止复发。",
+    "medium": "[限期整改] {specific_action}，完善相关管理制度，在7个工作日内完成整改。",
+    "low": "[持续改进] {specific_action}，优化管理流程，在30个工作日内完成改进。"
+  },
+
+  "rectification_with_problem_template": "{seq}. **{problem_desc}**\n    {rectification}",
+
+  "rectification_item_separator": "\n\n",
+
+  "module_table_row": "| {module_name} | {module_score} | {actual_score} | {deduction_score} | {score_rate}% |",
+
+  "problem_detail_section": "### {module_name}（{module_score}分）\n\n| 序号 | 问题描述 | 关联条款 | 风险等级 | 条款分值 | 扣分 | 扣分依据 | 参考依据 | 整改建议 | 备注 |\n|------|---------|---------|---------|---------|------|---------|---------|---------|---------|---------|\n{problem_rows}",
+
+  "problem_table_row": "| {seq} | {problem_desc} | {clause_id} {clause_name} | {risk_level} | {clause_score} | {deduction} | {deduction_reason} | {reference} | {rectification} | {remark} |"
+}
