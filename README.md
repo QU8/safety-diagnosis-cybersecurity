@@ -4,7 +4,7 @@
 
 ---
 
-## 一、这是什么
+## 一、这是干什么
 
 在安全性评价（安评）工作中，专家需要把现场发现的每一个问题，手工对照《安全性评价与生产管理评价细则》逐条找条款、算扣分、定风险等级，再汇总成报告。这项工作**重复、易漏、耗时长**。
 
@@ -37,7 +37,6 @@
 ```
 safety-diagnosis-cybersecurity/
 ├── SKILL.md                      # 技能定义与执行规范（核心）
-├── _user_meta.json               # 安装元数据
 ├── README.md                     # 本文件
 ├── assets/
 │   └── knowledge_base.json       # 评价细则知识库（62 条条款 / 650 分）
@@ -57,19 +56,12 @@ safety-diagnosis-cybersecurity/
 
 ## 四、安装方法
 
-本技能基于 AI 技能框架运行，以WorkBuddy为例,安装步骤如下：
+本技能基于 AI 技能框架运行，安装步骤如下：
 
-1. 将本仓库克隆或下载到本地：
+将本仓库克隆或下载到本地：
    ```bash
    git clone https://github.com/QU8/safety-diagnosis-cybersecurity.git
    ```
-2. 将整个 `safety-diagnosis-cybersecurity/` 目录复制到 WorkBuddy 的技能目录：
-   - Windows：`C:\Users\<你的用户名>\.workbuddy\skills\`
-   - macOS / Linux：`~/.workbuddy/skills/`
-3. 重启 WorkBuddy（或在技能管理中刷新），即可看到「安评检查助手 - 网络安全」。
-
-> 安装后技能目录名即作为技能标识（slug），保持 `safety-diagnosis-cybersecurity` 不变可避免引用错乱；技能在界面中显示的中文名为 `display_name` 字段的值。
-
 ---
 
 ## 五、使用流程
